@@ -13,11 +13,16 @@ function handleClick(event){
     return response;
   })
   .then(function(object){
-    console.log(object)
+
   })
   .catch(function(error){
     if(document.getElementById("modal").classList.contains('hidden')){
+      // displays error
     	document.querySelector(".hidden").classList.remove('hidden');
+      //displays error message
+      document.getElementById("modal-message").innerHTML = error;
+      // removes error message
+      setTimeout(function(){ document.getElementById("modal").classList.add('hidden')}, 5000);
     }
   });
 }
