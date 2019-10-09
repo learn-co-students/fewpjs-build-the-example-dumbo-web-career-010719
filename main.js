@@ -13,17 +13,14 @@ function handleClick(event){
     return response;
   })
   .then(function(object){
-
+    console.log(object)
   })
   .catch(function(error){
     if(document.getElementById("modal").classList.contains('hidden')){
-      document.getElementByClassName('hidden').classList.remove('.hidden')
-      document.getElementById("modal-message").innerHTML = error.message;
+    	document.querySelector(".hidden").classList.remove('hidden');
     }
   });
-  
 }
-
 
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
