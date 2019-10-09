@@ -13,7 +13,8 @@ function handleClick(event){
     return response;
   })
   .then(function(object){
-
+    // changes the heart to a full heart
+    document.querySelector('.like-glyph').innerText = FULL_HEART;
   })
   .catch(function(error){
     if(document.getElementById("modal").classList.contains('hidden')){
