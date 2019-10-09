@@ -3,24 +3,29 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-const likeButtons = document.querySelectorAll('.like')
+
+
+let likeButtons = document.querySelectorAll('.like');
+
 for (const button of likeButtons) {
   button.addEventListener('click', handleClick)
 }
+
 function handleClick(event){
+  let heart = event.target;
   mimicServerCall()
   .then(function(response){
     return response;
   })
   .then(function(object){
-    if (document.querySelector('.like-glyph').innerText === EMPTY_HEART) {
+    if (heart.innerText === EMPTY_HEART) {
       // changes the heart to a full heart
-      document.querySelector('.like-glyph').innerText = FULL_HEART;
+      heart.innerText = FULL_HEART;
       // changes the color of the heart to red
-      document.querySelector('.like-glyph').classList.add('activated-heart')
+      heart.classList.add('activated-heart')
     }else {
         // changes the heart to a empty heart
-      document.querySelector('.like-glyph').innerText = EMPTY_HEART;
+      heart.innerText = EMPTY_HEART;
     }
   })
   .catch(function(error){
