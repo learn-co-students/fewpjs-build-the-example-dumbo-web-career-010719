@@ -3,8 +3,26 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const likeButtons = document.querySelectorAll('.like')
+for (const button of likeButtons) {
+  button.addEventListener('click', handleClick)
+}
+function handleClick(event){
+  mimicServerCall()
+  .then(function(response){
+    return response;
+  })
+  .then(function(object){
 
-
+  })
+  .catch(function(error){
+    if(document.getElementById("modal").classList.contains('hidden')){
+      document.getElementByClassName('hidden').classList.remove('.hidden')
+      document.getElementById("modal-message").innerHTML = error.message;
+    }
+  });
+  
+}
 
 
 //------------------------------------------------------------------------------
