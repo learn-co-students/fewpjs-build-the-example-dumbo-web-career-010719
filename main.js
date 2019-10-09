@@ -16,11 +16,12 @@ function handleClick(event){
     if (document.querySelector('.like-glyph').innerText === EMPTY_HEART) {
       // changes the heart to a full heart
       document.querySelector('.like-glyph').innerText = FULL_HEART;
+      // changes the color of the heart to red
+      document.querySelector('.like-glyph').classList.add('activated-heart')
     }else {
         // changes the heart to a empty heart
       document.querySelector('.like-glyph').innerText = EMPTY_HEART;
     }
-    // changes the color of the heart to red
   })
   .catch(function(error){
     if(document.getElementById("modal").classList.contains('hidden')){
